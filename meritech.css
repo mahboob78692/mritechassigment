@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.4;
+  animation: fadeDown 1s ease;
+}
+
+/* Floating icons */
+.floating {
+  position: absolute;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  animation: float 4s infinite ease-in-out;
+}
+
+.js { background: #f7df1e; top: 40%; left: 10%; }
+.ai { background: #ff6b6b; top: 30%; right: 15%; }
+.py { background: #4cc9f0; bottom: 20%; right: 20%; }
+
+/* Cards */
+.cards {
+  position: relative;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  transform: rotate(-10deg);
+}
+
+.card {
+  width: 220px;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: left;
+  transition: 0.4s;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: fadeUp 1s forwards;
+}
+
+.card:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Colors */
+.red { background: #ff6b6b; animation-delay: 0.2s; }
+.purple { background: #9d4edd; animation-delay: 0.4s; }
+.green { background: #06d6a0; animation-delay: 0.6s; }
+.blue { background: #4cc9f0; animation-delay: 0.8s; }
+.teal { background: #2ec4b6; animation-delay: 1s; }
+
+/* Main card bigger */
+.main {
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    transform: rotate(0);
+  }
+}
+.subtitle {
+  margin-top: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
